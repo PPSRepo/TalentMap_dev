@@ -4,7 +4,139 @@
     <talent-menu ></talent-menu>
          <div class="containerWrapper">
              <div class="container">
-                  talent view projects
+                  
+
+
+                    <ul class="nav nav-tabs nav-justified">
+                            <li class="nav-item" ng-class="{active:selectedTab == 1}" role="presentation">
+                                <a class="nav-link" ng-click="selectTab(1)" data-toggle="tab" role="tab">Project List</a>
+                            </li>
+                            <li class="nav-item" ng-class="{active:selectedTab == 2}" role="presentation">
+                                <a class="nav-link" ng-click="selectTab(2)" data-toggle="tab" role="tab">Pitched Projects</a>
+                            </li>
+                            <li class="nav-item" ng-class="{active:selectedTab == 3}" role="presentation">
+                                <a class="nav-link" ng-click="selectTab(3)" data-toggle="tab" role="tab">Pitch For Project</a>
+                            </li>
+                    </ul>
+                    
+                    <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" ng-class="{active:selectedTab == 1}" ng-show="selectedTab == 1">
+                               
+                                    <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Project Title</th>
+                                                    <th scope="col">Project Description</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Project 1</th>
+                                                    <td>Demo Description</td>
+                                                    <td><button ng-click="viewProjectDetails(project)">Details</button></td>
+                                                </tr>
+                                            </tbody>
+                                         </table>
+    
+                            </div>
+    
+                            <div role="tabpanel" class="tab-pane" ng-class="{active:selectedTab == 2}" ng-show="selectedTab == 2">
+                               
+                                    <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Project Title</th>
+                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Is Assigned</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Project 1</th>
+                                                    <td>Demo Description</td>
+                                                    <td>NO</td>
+                                                </tr>
+                                                <tr>
+                                                        <th scope="row">Project 2</th>
+                                                        <td>Demo Description</td>
+                                                        <td>YES</td>
+                                                    </tr>
+                                            </tbody>
+                                         </table>
+
+
+
+
+                            </div>
+                            
+                            <div role="tabpanel" class="tab-pane" ng-class="{active:selectedTab == 3}" ng-show="selectedTab == 3">   
+                                
+                                
+                                    <form class="form-horizontal">
+                                            <fieldset>
+                                                <legend>Pitch for Project</legend>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Select Project</label>
+                                                    <div class="col-sm-7">
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group">
+                                                                    <select id="orgName" class="form-control">
+                                                                            <option selected>Choose...</option>
+                                                                            <option>Project1</option>
+                                                                            <option>Project2</option>
+                                                                            <option>Project3</option>
+                                                                            <option>Project4</option>
+                                                                            <option>Project5</option>
+                                                                            <option>Project6</option>
+                                                                        </select>
+                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                    
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Select Group</label>
+                                                    <div class="col-sm-7">
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group">
+                                                        
+                                                                    <select id="orgId" class="form-control">
+                                                                            <option selected>Choose...</option>
+                                                                            <option>DSJF7SDFIUSF</option>
+                                                                            <option>DSJF7SDFIUSF</option>
+                                                                            <option>DSJF7SDFIUSF</option>
+                                                                            <option>DSJF7SDFIUSF</option>
+                                                                            <option>DSJF7SDFIUSF</option>
+                                                                            <option>DSJF7SDFIUSF</option>
+                                                                        </select>
+                
+                                                        
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                    
+            
+                                                <div class="form-group row">
+                                                        <span class="col-md-4 control-span"></span>
+                                                        <div class="col-md-8 inputGroupContainer">
+                                                            <input class="btn btn-primary" type="button" ng-model="save" ng-click="" value="Pitch">
+                                                        </div>
+                                                    </div>
+            
+                                                    </fieldset>
+                                                    </form>
+            
+
+
+                            </div>
+                    </div>
+
+
+
+
              </div> 
            </div>
        </div>

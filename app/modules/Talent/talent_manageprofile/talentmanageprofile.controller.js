@@ -10,6 +10,14 @@
         }
         $timeout(function(){
             $scope.selectTab(1);
+            $timeout(function() {
+                $scope.$apply(function() {
+                    $scope.changeTab("talentManageProfile");
+                });
+    
+            }, 500);
+    
+            
         });
         
     }
