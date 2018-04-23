@@ -209,7 +209,7 @@ var usr = "";
             bindToController: true,
             restrict: "E",
             transclude: true,
-            controller: function($scope) {
+            controller: function($scope, User) {
                 $scope.changeTab = function(tabName) {
                     $scope.clientTab = tabName;
                     if (tabName == "talentHome") {
@@ -221,7 +221,8 @@ var usr = "";
                     } else if (tabName == "talentManageGroup") {
                         $scope.goToPage("/talent/talentmanagegroup");
                     } else if (tabName == "talentLogout") {
-                        $scope.goToPage("/talent/logout");
+                        $scope.goToPage("/");
+                        User.logoutUser();
                     }
                 }
             }
@@ -234,7 +235,7 @@ var usr = "";
             templateUrl: "app/modules/admin/adminSideMenu.html",
             bindToController: true,
             restrict: "E",
-            controller: function($scope) {
+            controller: function($scope, User) {
                 $scope.changeTab = function(tabName) {
                     $scope.clientTab = tabName;
                     if (tabName == "adminHome") {
@@ -246,9 +247,9 @@ var usr = "";
                     } else if (tabName == "manageSponser") {
                         $scope.goToPage("admin/manageSponser");
                     } else if (tabName == "adminLogout") {
-                        // $location.path("/");
+                        $scope.goToPage("/");
+                        User.logoutUser();
                     }
-
                 }
             }
         };
@@ -297,7 +298,7 @@ var usr = "";
         $scope.$watch(User.isLoggedIn, function(value, oldValue) {
             if (!value) {
                 console.log("User Is Not Logged In, Redirecting to Login Page");
-                if ($location.path() !== "/") {
+                if ($location.path() !== "/" || $location.path() !== "") {
                     alert("You are not logged in - Redirecting to HOME PAGE");
                     $scope.goToPage("/");
                 }
