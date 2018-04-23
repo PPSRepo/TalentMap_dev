@@ -1,0 +1,123 @@
+USE `talentmapdev`;
+DROP procedure IF EXISTS `registerUserWithEmail`;
+
+DELIMITER $$
+USE `talentmapdev`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `registerUserWithEmail`(email varchar(100), userType int)
+BEGIN
+/* MUST have this handler to handle exception if query goes wrong */
+DECLARE exit handler for sqlexception
+  BEGIN
+    -- ERROR
+    select "error Occured in stored procedure";
+  ROLLBACK;
+END;
+
+set @email  = email;
+set @userType = userType;
+
+/* MUST HAVE THIS start transction before making any query */
+start transaction;
+insert into user_details (email,user_type) values(@email,@userType);
+set @userId = LAST_INSERT_ID();
+insert into client_details (id) values(@userId);
+INSERT INTO `talentmapdev`.`registration_request`
+(
+`requester_id`,
+`requester_type`,
+`requested_date`,
+`request_fulfilled`)
+VALUES
+(
+@userId,
+@userType,
+curDate(),
+0
+);
+
+
+select  "Registration request fulfilled" as res;
+commit;
+
+END$$
+
+DELIMITER ;
+
+
+-----------------
+
+USE `talentmapdev`;
+DROP procedure IF EXISTS `setRequesterPassword`;
+
+DELIMITER $$
+USE `talentmapdev`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `setRequesterPassword`(user_id int, requester_id int, user_password varchar(35))
+BEGIN
+/* MUST have this handler to handle exception if query goes wrong */
+DECLARE exit handler for sqlexception
+  BEGIN
+    -- ERROR
+    select "error Occured in stored procedure - setRequesterPassword";
+  ROLLBACK;
+END;
+
+set @user_id  = user_id;
+set @requester = requester_id;
+set @user_password =  user_password;
+
+/* MUST HAVE THIS start transction before making any query */
+start transaction;
+
+update user_details set `password` = @user_password where  id = @user_id;
+update  registration_request set request_fulfilled = 1 where id = @requester_id;
+
+
+select  email from user_details where id = @user_id;
+commit;
+
+END$$
+
+DELIMITER ;
+
+
+----------------------
+USE `talentmapdev`;
+DROP procedure IF EXISTS `registerUser`;
+
+DELIMITER $$
+USE `talentmapdev`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `registerUser`(firstname varchar(100),lastname varchar(100),email varchar(100), userPassword varchar(100), userType int)
+BEGIN
+/* MUST have this handler to handle exception if query goes wrong */
+DECLARE exit handler for sqlexception
+  BEGIN
+    -- ERROR
+    select "error Occured in stored procedure";
+  ROLLBACK;
+END;
+
+set @email  = email;
+set @userType = userType;
+set @firstname = firstname;
+set @lastname = lastname;
+set @userPassword = userPassword;
+
+/* MUST HAVE THIS start transction before making any query */
+start transaction;
+insert into user_details (first_name,last_name,`password`,email,user_type) values(@firstname,@lastname,@userPassword,@email,@userType);
+set @userId = LAST_INSERT_ID();
+
+INSERT INTO `talentmapdev`.`talent_details`
+(`id`)
+VALUES
+(@userId);
+
+
+select  "Registration request fulfilled" as res;
+commit;
+
+END$$
+
+DELIMITER ;
+
+

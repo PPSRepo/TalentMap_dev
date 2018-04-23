@@ -1,0 +1,616 @@
+When registering new user 
+
+request obj
+{
+	"apiName": "registerUserWithEmail", 
+	"data": {
+		"email":"parth_sha7@yoo.com",
+		"userType" : 3
+	}, 
+	"talentMap": "webCall"
+}
+
+
+response object
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+			"resgistrationStatus": 1,
+            "message": "Registration request fulfilled",
+            "mail": {
+                "status": 200,
+                "message": "Message has been sent"
+            }
+        },
+        "error": "",
+        "status": 200
+    }
+}
+=====
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "resgistrationStatus": 0,
+            "message": "User with email parth_shah9478@yahoo.com allready exists."
+        },
+        "error": "",
+        "status": 200
+    }
+}
+--------------------------------------
+to get list of registration request 
+request object
+{
+	"apiName": "getRegistrationRequestList", 
+	"data": {
+
+	}, 
+	"talentMap": "webCall"
+}
+
+response object
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "records": [
+                {
+                    "user_id": 16,
+                    "first_name": null,
+                    "last_name": null,
+                    "email": "parth_shah9478@yahoo.com",
+                    "user_type": 3,
+                    "request_id": 12,
+                    "requested_date": "2018-04-14",
+                    "request_fulfilled": 0
+                },
+                {
+                    "user_id": 17,
+                    "first_name": null,
+                    "last_name": null,
+                    "email": "parth.shah9478@gmail.com",
+                    "user_type": 3,
+                    "request_id": 13,
+                    "requested_date": "2018-04-14",
+                    "request_fulfilled": 0
+                }
+            ]
+        },
+        "error": "",
+        "status": 200
+    }
+}
+
+
+----------------------------------------------------
+
+when admin sets password for requester
+request object
+{
+	"apiName": "setRequesterPassword", 
+	"data": {
+	"raw_password":"abc1234",
+	"user_id":16,
+	"request_id":12
+	}, 
+	"talentMap": "webCall"
+}
+
+response object
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "mail": {
+                "status": 200,
+                "message": "Message has been sent"
+            },
+            "passwordSetStatus": 1,
+            "message": "Password set successfully"
+        },
+        "error": "",
+        "status": 200
+    }
+}
+
+-----------------------
+login User
+request object
+{
+	"apiName": "loginUser", 
+	"data": {
+		
+	"email":"parth_shah9478@yahoo.com",
+	"user_type":3,
+	"password":"a141c47927929bc2d1fb6d336a256df4"
+	}, 
+	"talentMap": "webCall"
+}
+
+
+
+response object  - if username and user_type and password valid
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6InBhcnRoX3NoYWg5NDc4QHlhaG9vLmNvbSIsInVzZXJfdHlwZSI6MywicGFzc3dvcmQiOiJhMTQxYzQ3OTI3OTI5YmMyZDFmYjZkMzM2YTI1NmRmNCIsInVzZXJfaWQiOjE2fQ.xQhcEuoC80p_xikkQmcarCAYUbeQEhocq6Zh7LSS4CE",
+            "loginStatus": 200,
+            "loginMessage": "Go",
+            "user_id": 16
+        },
+        "error": "",
+        "status": 200
+    }
+}
+reponse object - if invalid
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "loginStatus": 300,
+            "loginMessage": "Invalid username or password"
+        },
+        "error": "",
+        "status": 200
+    }
+}
+
+
+
+----------------
+after login, if any of the request is made  the json should be like this
+Here, Token is passed in "data" json, which authenticates that user is logged in 
+request json 
+{
+	"apiName": "API_NAME_AFTER_USER_IS_LOGGED_IN", 
+	"data": {
+		"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6InBhcnRoX3NoYWg5NDc4QHlhaG9vLmNvbSIsInVzZXJfdHlwZSI6MywicGFzc3dvcmQiOiJhMTQxYzQ3OTI3OTI5YmMyZDFmYjZkMzM2YTI1NmRmNCJ9.QJEBEUNKIklWF2d7mCwzKxb721mkv_x_FEmmPi2PXT8",
+		"user_id" : "",
+		"JSON_KEY" :"ANY PARAMS"
+	}, 
+	"talentMap": "webCall"
+}
+
+---------------------------------------------------
+CLIENT - 
+to get client profile details
+request object
+{
+	"apiName": "getClientProfileDetails", 
+	"data": {
+		"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6InBhcnRoX3NoYWg5NDc4QHlhaG9vLmNvbSIsInVzZXJfdHlwZSI6MywicGFzc3dvcmQiOiJhMTQxYzQ3OTI3OTI5YmMyZDFmYjZkMzM2YTI1NmRmNCIsInVzZXJfaWQiOjE2fQ.xQhcEuoC80p_xikkQmcarCAYUbeQEhocq6Zh7LSS4CE",
+		"user_id": 16	
+	}, 
+	"talentMap": "webCall"
+}
+
+
+response obj.
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "records": [
+                {
+                    "first_name": null,
+                    "last_name": null,
+                    "email": "parth_shah9478@yahoo.com",
+                    "user_type": 3,
+                    "phone_number": null,
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "postal": null
+                }
+            ]
+        },
+        "error": "",
+        "status": 200
+    }
+}
+
+-----------------------
+CLIENT - 
+to updated user profile details
+Email is never updated - so it should be disabled
+request obj
+{
+	"apiName": "updateClientProfileDetails", 
+	"data": {
+		"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6InBhcnRoX3NoYWg5NDc4QHlhaG9vLmNvbSIsInVzZXJfdHlwZSI6MywicGFzc3dvcmQiOiJhMTQxYzQ3OTI3OTI5YmMyZDFmYjZkMzM2YTI1NmRmNCIsInVzZXJfaWQiOjE2fQ.xQhcEuoC80p_xikkQmcarCAYUbeQEhocq6Zh7LSS4CE",
+		"user_id": 16,
+		"first_name": "parth",
+        "last_name": "shah",
+        "phone_number": "2269294395",
+        "address": "425 wilson ave",
+        "city": "Kitchener",
+        "state": "Ontario",
+        "postal": "n2c2r8"
+	}, 
+	"talentMap": "webCall"
+}
+
+
+
+
+reponse obj
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "recordsUpdated": 1,
+            "updateStatus": 200,
+            "message": "details updated"
+        },
+        "error": "",
+        "status": 200
+    }
+}
+
+
+---------------------------------------------------------
+CLIENT - 
+to get project list of client
+{
+	"apiName": "getClientProjectList", 
+	"data": {
+		"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6InBhcnRoX3NoYWg5NDc4QHlhaG9vLmNvbSIsInVzZXJfdHlwZSI6MywicGFzc3dvcmQiOiJhMTQxYzQ3OTI3OTI5YmMyZDFmYjZkMzM2YTI1NmRmNCIsInVzZXJfaWQiOjE2fQ.xQhcEuoC80p_xikkQmcarCAYUbeQEhocq6Zh7LSS4CE",
+		"user_id": 16
+		
+	}, 
+	"talentMap": "webCall"
+}
+
+
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "records": [
+                {
+                    "project_id": 1,
+                    "client_id": 16,
+                    "project_sponsor_name": "Parth project",
+                    "title": "Talent map",
+                    "email": null,
+                    "telephone_direct": null,
+                    "available_few_hours": null,
+                    "feedback_given": 0,
+                    "project_title": null,
+                    "project_description": null,
+                    "attachments_provided": null,
+                    "problems_opportunity": null,
+                    "research_required": null,
+                    "analysis_required": null,
+                    "estimated_effort_hours": null,
+                    "report_format": null,
+                    "other_deliverables": null,
+                    "skill_needed_1": null,
+                    "skill_needed_2": null,
+                    "skill_needed_3": null,
+                    "required_training": null,
+                    "training_details": null,
+                    "international_component": null,
+                    "international_component_details": null,
+                    "coop_opportunity": null,
+                    "coop_opportunity_details": null,
+                    "year_submitted": null,
+                    "month": null,
+                    "day": null,
+                    "project_status_id": 1,
+                    "project_status": "proposed",
+                    "sponsor_id": 1,
+                    "sponsor_name": "Conestoga College"
+                }
+            ]
+        },
+        "error": "",
+        "status": 200
+    }
+}
+-----------------------------------------
+CLIENT - 
+To add client project - things to make sure -> send bool value in Yes / No radio option
+request json
+{
+	"apiName": "addClientProject", 
+	"data": {
+		"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6InBhcnRoX3NoYWg5NDc4QHlhaG9vLmNvbSIsInVzZXJfdHlwZSI6MywicGFzc3dvcmQiOiJhMTQxYzQ3OTI3OTI5YmMyZDFmYjZkMzM2YTI1NmRmNCIsInVzZXJfaWQiOjE2fQ.xQhcEuoC80p_xikkQmcarCAYUbeQEhocq6Zh7LSS4CE",
+		"user_id": 16,
+		"client_id": 16,
+                    "project_sponsor_name": "Parth projectf test",
+                    "title": "Talent map4",
+                    "email": "",
+                    "telephone_direct": "",
+                    "available_few_hours": "",
+                    "feedback_given": 0,
+                    "project_title": "",
+                    "project_description": "",
+                    "attachments_provided": "",
+                    "problems_opportunity": "",
+                    "research_required": "",
+                    "analysis_required": "",
+                    "estimated_effort_hours": "",
+                    "report_format": "",
+                    "other_deliverables": "",
+                    "skill_needed_1": "",
+                    "skill_needed_2": "",
+                    "skill_needed_3": "",
+                    "required_training": "",
+                    "training_details": "",
+                    "international_component": "",
+                    "international_component_details": "",
+                    "coop_opportunity": true,
+                    "coop_opportunity_details": "",
+                    "year_submitted": 0,
+                    "month": 0,
+                    "day": 0
+		
+	}, 
+	"talentMap": "webCall"
+}
+
+
+Response object
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "insert_status": 1
+        },
+        "error": "",
+        "status": 200
+    }
+}
+
+------------------------------------------
+Admin - Get admin dashboard counter
+
+request object
+{
+	"apiName": "getAdminDashboardCounterData", 
+	"data": {
+	
+	}, 
+	"talentMap": "webCall"
+}
+
+response object
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "records": [
+                {
+                    "proposed_project_count": 2,
+                    "client_registration_count": 3
+                }
+            ]
+        },
+        "error": "",
+        "status": 200
+    }
+}
+
+------------------------------------
+Admin - to get list of client projects.
+
+request object
+{
+	"apiName": "getClientProjectListForAdmin", 
+	"data": {
+	
+	}, 
+	"talentMap": "webCall"
+}
+
+Response object
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "records": [
+                {
+                    "project_id": 1,
+                    "proposor_email": "parth_shah9478@yahoo.com",
+                    "client_id": 16,
+                    "project_sponsor_name": "Parth project",
+                    "title": "Talent map",
+                    "email": null,
+                    "telephone_direct": null,
+                    "available_few_hours": null,
+                    "feedback_given": 0,
+                    "project_title": null,
+                    "project_description": null,
+                    "attachments_provided": null,
+                    "problems_opportunity": null,
+                    "research_required": null,
+                    "analysis_required": null,
+                    "estimated_effort_hours": null,
+                    "report_format": null,
+                    "other_deliverables": null,
+                    "skill_needed_1": null,
+                    "skill_needed_2": null,
+                    "skill_needed_3": null,
+                    "required_training": null,
+                    "training_details": null,
+                    "international_component": null,
+                    "international_component_details": null,
+                    "coop_opportunity": null,
+                    "coop_opportunity_details": null,
+                    "year_submitted": null,
+                    "month": null,
+                    "day": null,
+                    "project_status_id": 1,
+                    "project_status": "proposed",
+                    "sponsor_id": 1,
+                    "sponsor_name": "Conestoga College"
+                },
+                {
+                    "project_id": 10,
+                    "proposor_email": "parth_shah9478@yahoo.com",
+                    "client_id": 16,
+                    "project_sponsor_name": "Parth projectf test",
+                    "title": "Talent map4",
+                    "email": "",
+                    "telephone_direct": "",
+                    "available_few_hours": 0,
+                    "feedback_given": 0,
+                    "project_title": "",
+                    "project_description": "",
+                    "attachments_provided": 0,
+                    "problems_opportunity": "",
+                    "research_required": "",
+                    "analysis_required": "",
+                    "estimated_effort_hours": 0,
+                    "report_format": "",
+                    "other_deliverables": "",
+                    "skill_needed_1": "",
+                    "skill_needed_2": "",
+                    "skill_needed_3": "",
+                    "required_training": 0,
+                    "training_details": "",
+                    "international_component": 0,
+                    "international_component_details": "",
+                    "coop_opportunity": 1,
+                    "coop_opportunity_details": "",
+                    "year_submitted": 0,
+                    "month": 0,
+                    "day": 0,
+                    "project_status_id": 1,
+                    "project_status": "proposed",
+                    "sponsor_id": null,
+                    "sponsor_name": null
+                }
+            ]
+        },
+        "error": "",
+        "status": 200
+    }
+}
+
+
+------------------------------------------
+Admin -  get list of client
+
+request object
+
+{
+	"apiName": "getClientListForAdmin", 
+	"data": {
+	
+	}, 
+	"talentMap": "webCall"
+}
+
+response object
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "records": [
+                {
+                    "company_name": "Talentmap Dev- ops",
+                    "email": "parth_shah9478@yahoo.com",
+                    "phone_number": "2269294395",
+                    "address": "425 wilson ave",
+                    "city": "Kitchener",
+                    "state": "Ontario",
+                    "postal": "n2c2r8",
+                    "project_count": 2
+                },
+                {
+                    "company_name": null,
+                    "email": "pshah2382@conestogac.on.ca",
+                    "phone_number": null,
+                    "address": null,
+                    "city": null,
+                    "state": null,
+                    "postal": null,
+                    "project_count": 0
+                },
+                {
+                    "company_name": "Cambridge Solutions",
+                    "email": "gerald.ford@csolutions.org",
+                    "phone_number": "",
+                    "address": "28 milling road",
+                    "city": "",
+                    "state": "",
+                    "postal": "",
+                    "project_count": 0
+                }
+            ]
+        },
+        "error": "",
+        "status": 200
+    }
+}
+-----------------------------------------------
+Admin - Update specific project details 
+{
+	"apiName": "updateClientProjectDetailsByAdmin", 
+	"data": {
+	
+		"project_id": 1,
+                    "project_sponsor_name": "Parth projectf test",
+                    "title": "Talent map4",
+                    "email": "",
+                    "telephone_direct": "",
+                    "available_few_hours": "",
+                    "feedback_given": 0,
+                    "project_title": "",
+                    "project_description": "",
+                    "attachments_provided": "",
+                    "problems_opportunity": "",
+                    "research_required": "",
+                    "analysis_required": "",
+                    "estimated_effort_hours": "",
+                    "report_format": "",
+                    "other_deliverables": "",
+                    "skill_needed_1": "",
+                    "skill_needed_2": "",
+                    "skill_needed_3": "",
+                    "required_training": "",
+                    "training_details": "",
+                    "international_component": "",
+                    "international_component_details": "",
+                    "coop_opportunity": true,
+                    "coop_opportunity_details": "",
+                    "year_submitted": 0,
+                    "month": 0,
+                    "day": 0,
+                    "project_status" : 2,
+                    "sponsor_id" : 1
+		
+	}, 
+	"talentMap": "webCall"
+}
+
+response object
+{
+    "status": 200,
+    "error": "",
+    "responseData": {
+        "data": {
+            "update_status": 1
+        },
+        "error": "",
+        "status": 200
+    }
+}
