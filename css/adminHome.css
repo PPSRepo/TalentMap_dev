@@ -1,0 +1,32 @@
+.adminHome .navbar{
+    background: white;
+}
+.adminHome .navbar .nav
+{
+    margin: 1.5em;
+    border-bottom: none;
+}
+.adminHome .tabs
+{
+    margin-left: 2em;
+    margin-top:2em;
+    width: 200px;
+    text-align: center;
+    font-size: 15px;
+    cursor:pointer;
+}
+.adminHome .table
+{
+    margin: 2em;
+}
+.adminHome .mainArea
+{
+    font-size:18px;
+    height: 300px;
+    border:1px solid;   
+}
+.adminHome .mainArea .content
+{
+    margin-left: 15%;
+    margin-top: 10%;
+}

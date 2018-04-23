@@ -31,6 +31,10 @@ if(isset($request["talentMap"])){
             $responseData = (new registrationController)->registerNewUser($request["data"]);
             break;
         }
+        case "registerUser" :{
+            $responseData = (new registrationController)->registerUser($request["data"]);
+            break;
+        }
         case "getRegistrationRequestList" :{
             $responseData = (new registrationController)->getRegistrationRequestList($request["data"]);
             break;

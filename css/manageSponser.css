@@ -1,0 +1,32 @@
+.manageSponser .navbar{
+    /* margin-left: -33px;
+    height: 85px;
+    width: 1180px; */
+    background: white;
+   
+    
+}
+.manageSponser .navbar .nav
+{
+    margin: 1.5em;
+    border-bottom: none;
+    
+}
+.manageSponser .tabs
+{
+   
+    margin-left: 2em;
+    margin-top:2em;
+    width: 200px;
+    text-align: center;
+    font-size: 15px;
+    cursor:pointer;
+}
+.manageSponser .table
+{
+    margin: 2em;
+}
+.manageSponser .navbarSetup .tab-content
+{
+    overflow: auto;
+}

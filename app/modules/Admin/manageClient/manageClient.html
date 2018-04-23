@@ -1,37 +1,19 @@
+<div class="manageClient">
 <div class="container-fluid display-table">
     <div class="row display-table-row">
-        <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
-            <div class="logo">
-                <a hef="home.html"><img src="/logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
-                    <img src="/logo.png" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
-                </a>
-            </div>   
-            <div class="navi">
-                <ul>
-                    <li class="active"><a href="/index.html"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-                    <li><a href="/ManageClient/manageClient.html"><span class="glyphicon glyphicon-user"></span> Manage Client</span></a></li>
-                    <li><a href="/ManageTalent/manageTalent.html"><span class="glyphicon glyphicon-user"></span> Manage Talent</span></a></li>
-                    <li><a href="/ManageSponser/manageSponser.html"><span class="glyphicon glyphicon-user"></span> Manage Sponser</span></a></li>
-                    <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Logout</span></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-10 col-sm-11 display-table-cell v-align">
-
-
+        
+        <admin-menu></admin-menu>
+        <div class="col-md-10 col-sm-11 display-table-cell v-align talentMapTabs">
                       <div class="container-fluid navbarSetup">
-                        <nav class="navbar navbar-inverse">
                           <!-- Nav tabs -->
-                          <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">Registration Request</a></li>
-                            <li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">Project Proposed</a></li>
-                            <li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab">Client List</a></li>
+                          <ul class="nav nav-tabs mb-3" role="tablist">
+                            <li class="tabs nav-link " ng-class="{active:selectedTab == 1}"  role="presentation"><a ng-click="selectTab(1)" aria-controls="1" role="tab" data-toggle="tab">Registration Request</a></li>
+                            <li class="tabs nav-link " ng-class="{active:selectedTab == 2}" role="presentation"><a ng-click="selectTab(2)" aria-controls="2" role="tab" data-toggle="tab">Project Proposed</a></li>
+                            <li class="tabs nav-link " ng-class="{active:selectedTab == 3}" role="presentation"><a ng-click="selectTab(3)" aria-controls="3" role="tab" data-toggle="tab">Client List</a></li>
                           </ul>
-                        </nav>
-                        
                           <!-- Tab panes -->
                           <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane" id="1">
+                            <div role="tabpanel" class="tab-pane " ng-class="{active:selectedTab == 1}" ng-show="selectedTab == 1">
                                 <table class="table table-bordered">
                                     <thead>
                                       <tr>
@@ -39,7 +21,7 @@
                                         <th scope="col">First Name</th>
                                         <th scope="col">Last Name</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">set Password</th>
+                                        <th scope="col">Set Password</th>
                                         <th scope="col">Send Password</th>
                                       </tr>
                                     </thead>
@@ -48,26 +30,69 @@
                                         <th scope="row">1</th>
                                         <td>Mark</td>
                                         <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <td>markotto@outlook.com</td>
+                                        <td><input type="text"></td>
+                                        <td><button ng-click="">Send Password</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">2</th>
                                         <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
+                                        <td>Thornton</td>                                      
+                                        <td>jacobThornton@gmail.com</td>
+                                        <td><input type="text"></td>
+                                        <td><button ng-click="">Send Password</td>
+                                      </tr>
+                                      <!-- <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry the Bird</td>
+                                        <td>Larry the Bird</td>
+                                        <td>@twitter</td>
+                                        <td><input type="text"></td>
+                                        <td><button ng-click="">Send Password</td>
+                                      </tr> -->
+                                    </tbody>
+                                  </table>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane " ng-class="{active:selectedTab == 2}"  ng-show="selectedTab == 2">
+                                <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Sr. No</th>
+                                        <th scope="col">Client Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Project Title</th>
+                                        <th scope="col">Status</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td><a href="mailto:">@mdo</a></td>
+                                        <td><a ng-click="getProjectDetails('key')">Otto</a></td>
+                                        <td>Approved</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td><a href="mailto:">@mdo</a></td>
+                                        <td><a ng-click="getProjectDetails('key')">Talent Map</a></td>
+                                        <td>pending for details</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">3</th>
-                                        <td colspan="2">Larry the Bird</td>
-                                        <td>@twitter</td>
+                                        <td>Larry</td>
+                                        <td><a href="mailto:">@mdo</a></td>
+                                        <td><a ng-click="getProjectDetails('key')">Otto</a></td>
+                                        <td>Approved</td>
                                       </tr>
                                     </tbody>
                                   </table>
 
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="2">2</div>
                             
-                            <div role="tabpanel" class="tab-pane" id="3">
+                            <div role="tabpanel" class="tab-pane " ng-class="{active:selectedTab == 3}" ng-show="selectedTab == 3">
                                 <table class="table table-bordered">
                                     <thead>
                                       <tr>
@@ -75,7 +100,7 @@
                                         <th scope="col">First Name</th>
                                         <th scope="col">Last Name</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">Password</th>
+                                        <th scope="col">Number of Project Proposed</th>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -84,30 +109,35 @@
                                         <td>Mark</td>
                                         <td>Otto</td>
                                         <td>@mdo</td>
+                                        <td>@mdo</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">2</th>
                                         <td>Jacob</td>
                                         <td>Thornton</td>
                                         <td>@fat</td>
+                                        <td>@mdo</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">3</th>
-                                        <td colspan="2">Larry the Bird</td>
+                                        <td>Larry</td>
+                                        <td>Larry</td>
                                         <td>@twitter</td>
+                                        <td>@mdo</td>
                                       </tr>
                                     </tbody>
                                   </table>
 
                             </div>
-                            
+                           
                           </div>
                         
                         </div>
-            <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
+            
             
                 
         </div>
     </div>
 
+</div>
 </div>

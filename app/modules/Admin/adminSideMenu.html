@@ -1,36 +1,17 @@
-<!-- <div class="appSideMenu" >
+<div class="appSideMenu">
     
     <div class="row display-table-row">
         <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+            
             <div class="navi">
-                <ul>
-                    <li ng-class="{active:adminTab == '1'}"><a ng-click="DisplayPage('home')"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-                    <li ng-class="{active:adminTab == '2'}"><a ng-click="DisplayPage('manageClient')"><span class="glyphicon glyphicon-user"></span> Manage Client</span></a></li>
-                    <li ng-class="{active:adminTab == '3'}"><a ng-click="DisplayPage('manageTalent')"><span class="glyphicon glyphicon-user"></span> Manage Talent</span></a></li>
-                    <li ng-class="{active:adminTab == '4'}"><a ng-click="DisplayPage('manageSponser')"><span class="glyphicon glyphicon-user"></span> Manage Sponser</span></a></li>
-                    <li ng-class="{active:adminTab == '5'}"><a ng-click="DisplayPage('logout')"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Logout</span></a></li>
+                <ul role="tablist">
+                    <li ng-class="{active: clientTab == 'adminHome'}"><a href="" ng-click="changeTab('adminHome')"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                    <li ng-class="{active: clientTab == 'manageClient'}"><a href="" ng-click="changeTab('manageClient')"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Manage Client</span></a></li>
+                    <li ng-class="{active: clientTab == 'manageTalent'}"><a href="" ng-click="changeTab('manageTalent')"><i class="fa fa-briefcase" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Manage Talent</span></a></li>
+                    <li ng-class="{active: clientTab == 'manageSponser'}"><a href="" ng-click="changeTab('manageSponser')"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Manage Sponser</span></a></li>
+                    <li ng-class="{active: clientTab == 'adminLogout'}"><a href="" ng-click="changeTab('adminLogout')"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Logout</span></a></li>
                 </ul>
             </div>
         </div>
-    </div>
-</div>
- -->
-
-
-<div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
-    <!-- <div class="logo">
-        <a href="home.html"><img src="/logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
-            <img src="/logo.png" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
-        </a>
-    </div>   -->
-    <div class="navi">
-        <ul>
-            <li ng-class="{active:adminTab == '1'}"><a ng-click="DisplayPage('home')"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-            <li ng-class="{active:adminTab == '2'}"><a ng-click="DisplayPage('manageClient')"><span class="glyphicon glyphicon-user"></span> Manage Client</span></a></li>
-            <li ng-class="{active:adminTab == '3'}"><a ng-click="DisplayPage('manageTalent')"><span class="glyphicon glyphicon-user"></span> Manage Talent</span></a></li>
-            <li ng-class="{active:adminTab == '4'}"><a ng-click="DisplayPage('manageSponser')"><span class="glyphicon glyphicon-user"></span> Manage Sponser</span></a></li>
-            <li ng-class="{active:adminTab == '5'}"><a ng-click="DisplayPage('logout')"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Logout</span></a></li>
-        </ul>
-        
     </div>
 </div>

@@ -6,23 +6,23 @@ lsScope = "";
 
     function HomeController($scope, User, $timeout, $filter, InvokeAPICall, $rootScope, $location) {
 
-$scope.gotoClientLogin = function(){
-    $location.path("/client/login");
-};
+        $scope.gotoClientLogin = function() {
+            $scope.goToPage("/client/login");
+        };
 
-$scope.gotoAdminLogin = function(){
-    $location.path("/admin/login");
-};
+        $scope.gotoAdminLogin = function() {
+            $scope.goToPage("/admin/login");
+        };
 
-$scope.gotoTalentLogin = function(){
-    $location.path("/talent/login");
-};
-      
-        
+        $scope.gotoTalentLogin = function() {
+            $scope.goToPage("/talent/login");
+        };
+
+
         console.log(lsScope);
-        $timeout (function(){
+        $timeout(function() {
             $scope.setCurrentPageTitle("Talent Map - Home Page");
         });
-        
+
     }
 })();

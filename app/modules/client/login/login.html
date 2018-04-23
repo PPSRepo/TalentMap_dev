@@ -5,53 +5,52 @@
         <div class="col-sm-5">
             <div class="push"></div>
             <div class="push"></div>
-            <form class="form-box">           
-              
+            <form class="form-box">
+
                 <h2><b>Sign in</b></h2>
                 <div class="form-group">
-                  <label>UserName</label>
-                  <input type="text" class="form-control" ng-model="username" placeholder="username" required=""/>
-                </div> 
-       
-                <div class="form-group">
-                  <label>Password </label>
-                  <input type="password" class="form-control" ng-model="password" placeholder="password" required=""/>
+                    <label>UserName</label>
+                    <input type="text" class="form-control" ng-model="login.username" placeholder="username" required="" />
                 </div>
-       
+
+                <div class="form-group">
+                    <label>Password </label>
+                    <input type="password" class="form-control" ng-model="login.password" placeholder="password" required="" />
+                    <span class="alert-danger">{{ loginerror }}</span>
+                </div>
+
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary form-control" ng-click="loginClient()">Login</button>
-                  <span class="alert-danger">{{ loginerror }}</span>
                 </div>
-              
-            </form>
-        
-         
-       
-         </div> 
-         <div class="col-sm-1 middle-border"></div>
-         <div class="col-sm-1"></div>
 
-         <div class="col-sm-5">
-            <div class="push"></div>
-            <div class="push"></div>
-            <div class="push"></div>
-            <form class="form-box"> 
-            <div>
-                <h2><b>New User?</b></h2>
-                <div class="form-group">
-                    <label>Email ID</label>
-                    <input type="text" class="form-control" ng-model="emailid" placeholder="emailid" required=""/>
-                </div> 
-                <div class="form-group">
-                    <button  class="btn btn-primary form-control" ng-click="registerClient()" >Submit</button> 
-                    <span class="alert-danger">{{ registrationMessage }}</span>
-                  </div>
-    
-            </div>
-          </form>
-       </div>
-</div>
-      <div class="push"></div>
-    
-        
+            </form>
+
+
+
         </div>
+        <div class="col-sm-1 middle-border"></div>
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-5">
+            <div class="push"></div>
+            <div class="push"></div>
+            <div class="push"></div>
+            <form class="form-box">
+                <div>
+                    <h2><b>New User?</b></h2>
+                    <div class="form-group">
+                        <label>Email ID</label>
+                        <input type="text" class="form-control" ng-model="registration.emailId" placeholder="emailid" required="" />
+                        <span class="alert-danger">{{ registrationErrorMessage }}</span>
+                        <span class="alert-success">{{ registrationSuccessMessage }}</span>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary form-control" ng-click="registerClient()">Submit</button>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -4,13 +4,13 @@ lsScope = "";
 
     angular.module('app.admin.manageClient').controller('manageClientController', manageClientController);
 
-    function manageClientController($scope, User, $timeout, $filter, FileUtils, $rootScope, $location) {
-        lsScope = $scope;
-        $scope.userprofilePicSrc = window.config.defaultProfilePic;
-
-        $scope.goToManageClient = function() {
-            $location.path("/Admin/manageClient.html");
-        } 
-        console.log(lsScope);
+    function manageClientController($scope, User, $timeout, $filter, $rootScope, $location) {
+        $scope.selectTab = function(tab){
+            $scope.selectedTab = tab;
+        }
+        $timeout(function(){
+            $scope.selectTab(1);
+            
+        });
     }
 })();

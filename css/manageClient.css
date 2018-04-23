@@ -1,0 +1,19 @@
+
+.manageClient .tabs
+{
+    margin-left: 2em;
+    width: 200px;
+    text-align: center;
+    font-size: 15px;
+}
+.manageClient .table
+{
+    margin: 2em;
+}
+/* .table thead th
+{
+    border: 2px solid black;
+}
+.table tr td {
+    border:0.5px solid black;
+}; */

@@ -1,0 +1,126 @@
+<div class="clienthome">
+    <client-menu></client-menu>
+    <div class="containerWrapper">
+        <div class="container">
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Manage Profile</legend>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Company Name</label>
+                        <div class="col-sm-7">
+                            <div class="input-group mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input id="companyName" ng-model="profile.companyName" placeholder="Company Name" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Address</label>
+                        <div class="col-sm-7">
+                            <div class="input-group mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="glyphicon glyphicon-home"></i>
+                                    </span>
+                                    <input id="addressLine1" ng-model="profile.address" placeholder="Address Line" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">City</label>
+                        <div class="col-sm-7">
+                            <div class="input-group mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="glyphicon glyphicon-home"></i>
+                                    </span>
+                                    <input id="city" ng-model="profile.city" placeholder="City" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">State/Province/Region</label>
+                        <div class="col-sm-7">
+                            <div class="input-group mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="glyphicon glyphicon-home"></i>
+                                    </span>
+                                    <input id="state" ng-model="profile.state" placeholder="State/Province/Region" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Postal Code/ZIP</label>
+                        <div class="col-sm-7">
+                            <div class="input-group mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="glyphicon glyphicon-home"></i>
+                                    </span>
+                                    <input id="postcode" ng-model="profile.postcode" placeholder="Postal Code/ZIP" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-7">
+                            <div class="input-group mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="glyphicon glyphicon-envelope"></i>
+                                    </span>
+                                    <input id="email" disabled ng-model="profile.email" placeholder="Email" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Phone Number</label>
+                        <div class="col-sm-7">
+                            <div class="input-group mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="glyphicon glyphicon-earphone"></i>
+                                    </span>
+                                    <input id="phoneNumber" ng-model="profile.phoneNumber" placeholder="Phone Number" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Employee Size</label>
+                        <div class="col-sm-7">
+                            <div class="input-group mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input ng-model="profile.numberofEmployee" placeholder="Number of Employee" class="form-control" value="" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <span class="col-md-4 control-span"></span>
+                        <div class="col-md-8 inputGroupContainer">
+                            <input class="btn btn-primary" type="button" ng-model="save" ng-click="updateProfile()" value="Update Profile">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,254 @@
+<div class="clienthome">
+
+    <client-menu></client-menu>
+    <div class="containerWrapper">
+        <div class="container">
+
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Add Project Details</legend>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Sponser Name</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="sponserName" ng-model="sponserName" placeholder="Sponser Name" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Title</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="title" ng-model="title" placeholder="Title" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="Email" ng-model="Email" placeholder="Email" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Telephone : Direct</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="phonedirect" ng-model="phonedirect" placeholder="Phone" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Available 20 hours per week </label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input type="radio" ng-model="availability" name="availability" value="true">Yes
+                                <input type="radio" ng-model="availability" name="availability" value="false">No</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Feedback within 48 hours </label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input type="radio" ng-model="feedback" name="feedback" value="true">Yes
+                                <input type="radio" ng-model="feedback" name="feedback" value="false">No</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Project Title</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="projectTitle" ng-model="projectTitle" placeholder="Project Title" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Project Description and deliverables</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <textarea id="projectDescription" ng-model="projectDescription" placeholder="Project Description" class="form-control" value="" type="textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Attachment provided</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input type="radio" ng-model="attachement" name="attachement" value="yes">Yes
+                                <input type="radio" ng-model="attachement" name="attachement" value="no">No</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Analysis Required</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="analysisRequired" ng-model="analysisRequired" placeholder="Analysis Required" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Estimated student effort in hours</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="estimatedHours" ng-model="estimatedHours" placeholder="Estimated student effort in hours" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Project Title</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="projectTitle1" ng-model="projectTitle1" placeholder="Project Title" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Format of final report</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="reportFormat" ng-model="reportFormate" placeholder="Format of final report" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Other Deliverables </label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="otherDeliverables" ng-model="otherDeliverables" placeholder="Other Deliverables" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Student Skill needed 1</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="skill1" ng-model="skill1" placeholder="Skill" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Student Skill needed 2</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="skill2" ng-model="skill2" placeholder="Skill" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Student Skill needed 3</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="skill3" ng-model="skill3" placeholder="Skill" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Required in house training</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input type="radio" ng-model="trainingRequired" name="trainingRequired" value="yes">Yes
+                                <input type="radio" ng-model="trainingRequired" name="trainingRequired" value="no">No</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">If Yes, Specify </label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="trainingDescription" ng-model="trainingDescription" placeholder="Training Description" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">International Component</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input type="radio" ng-model="internationalComponent" name="internationalComponent" value="yes">Yes
+                                <input type="radio" ng-model="internationalComponent" name="internationalComponent" value="no">No</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">If Yes, Specify </label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="componentDescription" ng-model="componentDescription" placeholder="Component Description" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Co op opportunity</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input type="radio" ng-model="CoOpOpportunity" name="CoOpOpportunity" value="yes">Yes
+                                <input type="radio" ng-model="CoOpOpportunity" name="CoOpOpportunity" value="no">No</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">If Yes, Specify </label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="CoOpOpportunityDescription" ng-model="CoOpOpportunityDescription" placeholder="Co-op Description" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Year Submitted</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="year" ng-model="year" placeholder="Year" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Month</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="month" ng-model="month" placeholder="month" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Day</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="day" ng-model="day" placeholder="day" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <span class="col-md-4 control-span"></span>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group">
+                                <input class="btn btn-primary" type="button" ng-click="submitProjectIdea()" value="Submit">&nbsp;
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+            </form>
+
+        </div>
+    </div>
+</div>

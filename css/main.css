@@ -2,32 +2,43 @@
     max-width: 240px;
     padding: 16px 0 17px;
     margin-left: 42%;
-
 }
 
 .footer-bs {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     background-color: #3c3d41;
-    padding: 15px 40px;
-    color: rgba(255,255,255,1.00);
-    margin-bottom: 2px;
-    border-bottom-right-radius: 6px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 6px;
+    padding: 16px 40px;
+    color: rgba(255, 255, 255, 1.00);
 }
-
 
 .container {
     max-width: 100% !important;
-    
-}
-main{
-    min-height:430px;
-   
 }
 
+main {
+    min-height: 449px;
+}
+
+
 /* Each page right side portionof menu */
-.containerWrapper{
+
+.containerWrapper {
     padding-left: 14%;
-    padding-top: 10px;    
+    padding-top: 10px;
+}
+
+
+/****** TABS ****/
+.talentMapTabs{
+    margin-top:30px;
+}
+.talentMapTabs .tabs{
+    cursor: pointer;
+}
+.talentMapTabs .tabs .active{
+    border-bottom:none;
+    background-color: 
+}
+.talentMapTabs .tab-content{
+    overflow: auto;
 }

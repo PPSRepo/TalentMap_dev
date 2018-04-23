@@ -48,13 +48,20 @@ class phpConfig{
             "body"  => "Hello, <br>".
                      " Thanks for making registration request. <br>".
                      " You will soon receive mail with the username and password to login into the system. <br>".
-                     " Regards, <br> &copy; TalentMap Dev Team"
+                     " Regards, <br> &copy; TalentMap Team"
         ),
+        "registrationRequestTalentMailTemplate" => array(
+            "subject" => "TalentMap Registration Request",
+             "body"  => "Hello, <br>".
+                      " You have successfully registered yourselt into the system. <br>".
+                      " Please login into system using your Email ID as username and password.<br>".
+                      " Regards, <br> &copy; TalentMap Team"
+         ),
        "passwordResetMailTemplate" => array(
            "subject" => "TalentMap Password Reset Request",
            "body"  => "Hello, <br>".
                 " You will soon receive mail with the username and password to login into the system. <br>".
-                " Regards, <br> &copy; TalentMap Dev Team"
+                " Regards, <br> &copy; TalentMap Team"
        ),
        "passwordSetMailTemplate"=> array(
            "subject" => "TalentMap Login Details",

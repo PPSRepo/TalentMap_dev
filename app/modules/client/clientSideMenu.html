@@ -1,20 +1,43 @@
-<div class="appSideMenu" >
-                
-        <div class="row display-table-row">
-            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
-                
-                <div class="navi">
-                    <ul role="tablist">
-                        <li ng-class="{active:clientTab == 'clientHome'}"><a href="" ng-click="abc('clientHome')" ><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-                        <li ng-class="{active:clientTab == 'clientAddProfile'}"><a href="" ng-click="abc('clientAddProfile')" ><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Add Profile</span></a></li>
-                        <li ng-class="{active:clientTab == 'clientAddProject'}"><a href="" ng-click="abc('clientAddProject')" ><i class="fa fa-briefcase" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Add Project</span></a></li>
-                        <li ng-class="{active:clientTab == 'clientViewProfile'}"><a href="" ng-click="abc('clientViewProfile')"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">View Projects</span></a></li>
-                        <li ng-class="{active:clientTab == 'clientLogout'}"><a href="" ng-click="abc('clientLogout')" ><i class="fa fa-sign-out" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Logout</span></a></li>
-                     
-            
-                    </ul>
-                </div>
+<div class="appSideMenu">
+
+    <div class="row display-table-row">
+        <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+
+            <div class="navi">
+                <ul role="tablist">
+                    <li ng-class="{active:clientTab == 'clientHome'}">
+                        <a href="" ng-click="changeTab('clientHome')">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            <span class="hidden-xs hidden-sm">Home</span>
+                        </a>
+                    </li>
+                    <li ng-class="{active:clientTab == 'clientProfile'}">
+                        <a href="" ng-click="changeTab('clientProfile')">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span class="hidden-xs hidden-sm">Manage Profile</span>
+                        </a>
+                    </li>
+                    <li ng-class="{active:clientTab == 'clientAddProject'}">
+                        <a href="" ng-click="changeTab('clientAddProject')">
+                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+                            <span class="hidden-xs hidden-sm">Add Project</span>
+                        </a>
+                    </li>
+                    <li ng-class="{active:clientTab == 'clientViewProject'}">
+                        <a href="" ng-click="changeTab('clientViewProject')">
+                            <i class="fa fa-tasks" aria-hidden="true"></i>
+                            <span class="hidden-xs hidden-sm">View Projects</span>
+                        </a>
+                    </li>
+                    <li ng-class="{active:clientTab == 'clientLogout'}">
+                        <a href="" ng-click="changeTab('clientLogout')">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            <span class="hidden-xs hidden-sm">Logout</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-             
+    </div>
+
 </div>

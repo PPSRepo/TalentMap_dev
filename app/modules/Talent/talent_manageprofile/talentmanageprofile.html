@@ -1,0 +1,309 @@
+<div class="clienthome">
+
+    <talent-menu></talent-menu>
+    <div class="containerWrapper">
+        <div class="container">
+
+
+
+
+
+            <ul class="nav nav-tabs nav-justified">
+                <li class="nav-item" ng-class="{active:selectedTab == 1}" role="presentation">
+                    <a class="nav-link" ng-click="selectTab(1)" data-toggle="tab" role="tab">Personal Details</a>
+                </li>
+                <li class="nav-item" ng-class="{active:selectedTab == 2}" role="presentation">
+                    <a class="nav-link" ng-click="selectTab(2)" data-toggle="tab" role="tab">Skill Details</a>
+                </li>
+                <li class="nav-item" ng-class="{active:selectedTab == 3}" role="presentation">
+                    <a class="nav-link" ng-click="selectTab(3)" data-toggle="tab" role="tab">Sponsor details</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane" ng-class="{active:selectedTab == 1}" ng-show="selectedTab == 1">
+
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <legend>Student Profile</legend>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">First Name</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group">
+
+
+
+                                            <input id="firstName" ng-model="firstName" placeholder="First Name" class="form-control" value="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Last Name</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group">
+
+
+
+                                            <input id="lastName" ng-model="lastName" placeholder="Last Name" class="form-control" value="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group">
+
+
+
+                                            <input id="Email" ng-model="Email" placeholder="strada6016@conestogac.on.ca" class="form-control" value="" type="text" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Phone</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group">
+
+
+
+                                            <input id="Phone" ng-model="Phone" placeholder="Phone" class="form-control" value="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Address</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group">
+
+
+
+                                            <input id="addressLine1" ng-model="address" placeholder="Address Line" class="form-control" value="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">City</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group">
+
+
+
+                                            <input id="city" ng-model="profile.city" placeholder="City" class="form-control" value="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">State/Province/Region</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group">
+
+
+
+                                            <input id="state" ng-model="profile.state" placeholder="State/Province/Region" class="form-control" value="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Postal Code/ZIP</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group">
+
+
+
+                                            <input id="postcode" ng-model="profile.postcode" placeholder="Postal Code/ZIP" class="form-control" value="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Current Status</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group">
+
+
+
+                                            <select id="currentStatus" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option>Student</option>
+                                                <option>Employed</option>
+                                                <option>N/A</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Graduation Year</label>
+                                    <div class="col-sm-7">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group">
+    
+    
+    
+                                                <input id="gradYear" ng-model="gradYear" placeholder="Graduation Year" class="form-control" value="" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Graduation Month</label>
+                                        <div class="col-sm-7">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group">
+        
+        
+        
+                                                    <input id="gradMonth" ng-model="gradMonth" placeholder="Graduation Month" class="form-control" value="" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                            
+                              
+                                <div class="form-group row">
+                                        <span class="col-md-4 control-span"></span>
+                                        <div class="col-md-8 inputGroupContainer">
+                                            <input class="btn btn-primary" type="button" ng-model="save" ng-click="" value="Save Details">
+                                        </div>
+                                    </div>
+
+
+
+                        </fieldset>
+                    </form>
+
+
+
+                </div>
+
+                <div role="tabpanel" class="tab-pane" ng-class="{active:selectedTab == 2}" ng-show="selectedTab == 2">
+                    
+
+                        <form class="form-horizontal">
+                                <fieldset>
+                                    <legend>Student Profile</legend>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Add Skills</label>
+                                        <div class="col-sm-7">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group">
+                                                    <textarea id="skills" ng-model="firstName" placeholder="Add skills" class="form-control" value="" type="text"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <div class="form-group row">
+                                        <span class="col-md-4 control-span"></span>
+                                        <div class="col-md-8 inputGroupContainer">
+                                            <input class="btn btn-primary" type="button" ng-model="save" ng-click="" value="Add skills">
+                                        </div>
+                                    </div>
+
+                                    </fieldset>
+                        </form>
+
+
+
+
+                </div>
+
+                <div role="tabpanel" class="tab-pane" ng-class="{active:selectedTab == 3}" ng-show="selectedTab == 3">
+                    
+
+                        <form class="form-horizontal">
+                                <fieldset>
+                                    <legend>Student Profile</legend>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Organization Name</label>
+                                        <div class="col-sm-7">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group">
+                                                        <select id="orgName" class="form-control">
+                                                                <option selected>Choose...</option>
+                                                                <option>Conestoga COllege</option>
+                                                                <option>Mohawk College</option>
+                                                                <option>Cambarian College</option>
+                                                                <option>Fanshaw College</option>
+                                                                <option>Niagra College</option>
+                                                                <option>Confadaration College</option>
+                                                            </select>
+    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Organization ID</label>
+                                        <div class="col-sm-7">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group">
+                                            
+                                                        <select id="orgId" class="form-control">
+                                                                <option selected>Choose...</option>
+                                                                <option>DSJF7SDFIUSF</option>
+                                                                <option>DSJF7SDFIUSF</option>
+                                                                <option>DSJF7SDFIUSF</option>
+                                                                <option>DSJF7SDFIUSF</option>
+                                                                <option>DSJF7SDFIUSF</option>
+                                                                <option>DSJF7SDFIUSF</option>
+                                                            </select>
+    
+                                            
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+
+                                    <div class="form-group row">
+                                            <span class="col-md-4 control-span"></span>
+                                            <div class="col-md-8 inputGroupContainer">
+                                                <input class="btn btn-primary" type="button" ng-model="save" ng-click="" value="Add Sponsor">
+                                            </div>
+                                        </div>
+
+                                        </fieldset>
+                                        </form>
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </div>
+</div>

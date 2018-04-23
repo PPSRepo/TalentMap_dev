@@ -1,0 +1,32 @@
+.manageTalent .navbar{
+    /* margin-left: -33px;
+    height: 85px;
+    width: 1180px; */
+    background: white;
+   
+    
+}
+.manageTalent .navbar .nav
+{
+    margin: 1.5em;
+    border-bottom: none;
+    
+}
+.manageTalent .tabs
+{
+   
+    margin-left: 2em;
+    margin-top:2em;
+    width: 200px;
+    text-align: center;
+    font-size: 15px;
+    cursor:pointer;
+}
+.manageTalent .table
+{
+    margin: 2em;
+}
+.manageTalent .navbarSetup .tab-content
+{
+    overflow: auto;
+}

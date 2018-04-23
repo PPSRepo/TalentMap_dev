@@ -66,6 +66,7 @@ class registrationController
                     $resData["resgistrationStatus"] = 1;
                 }else{
                     $resData["message"] = "error occured in database";
+                    $resData["resgistrationStatus"] = 0;
                 }
                 
                 $stmt->close();                
@@ -87,7 +88,7 @@ class registrationController
         
         return $responseData;
     }
-    
+       
     public function getRegistrationRequestList ($data){
           
             $responseData = phpConfig::$config["responseDataFormat"];
@@ -155,6 +156,57 @@ class registrationController
         }
         
         
+        $responseData["data"] = $resData;
+        
+        return $responseData;
+    }
+
+    public function registerUser($data){
+        //first line in each controller's function
+        $responseData = phpConfig::$config["responseDataFormat"];
+        $resData = array();
+        
+        $param = array();
+        $param["email"] = $data["email"];
+        $param["userType"] = $data["userType"];
+        $param["firstname"] = $data["firstname"];
+        $param["lastname"] = $data["lastname"];
+        $param["password"] = md5($data["password"]);
+        
+        $response = $this->checkUserExists($param);
+        if($response["status"] == phpConfig::$config["statusCode"]["taskCompleted"] ){
+            $userExists = $response["data"];
+            
+            if($userExists["isAvailable"] == false){
+                
+                $conn = dbCon::getDbCon();
+                $sql = "CALL registerUser(?,?,?,?,?)";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("ssssi",$param["firstname"],$param["lastname"],$param["email"],$param["password"],$param["userType"]);
+                if($stmt->execute()){
+                    $stmt->bind_result($res);
+                    //when only one row
+                    $stmt->fetch();
+                    $resData["message"] = $res;
+                    //sending mail
+                    $resData["mail"] =(new mailerController)->sendMail($data["email"],phpConfig::$config["registrationRequestTalentMailTemplate"]);
+                    $resData["resgistrationStatus"] = 1;
+                }else{
+                    $resData["message"] = "error occured in database";
+                    $resData["resgistrationStatus"] = 0;
+                }
+                $stmt->close();                
+                
+            }else{
+                $resData["resgistrationStatus"] = 0;
+                $resData["message"] = "User with email " . $data["email"] . " already exists.";
+            }
+            $responseData["status"] = phpConfig::$config["statusCode"]["taskCompleted"];
+        }else{
+            $resData["received_data"] = array();
+            $responseData["status"] = phpConfig::$config["statusCode"]["taskIncompleted"];
+        }
+        //last line
         $responseData["data"] = $resData;
         
         return $responseData;

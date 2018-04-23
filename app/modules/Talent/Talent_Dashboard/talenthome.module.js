@@ -1,6 +1,6 @@
 (function() {
     'use strict';
 
-    angular.module('app.talent.talenthome', []);
+    angular.module('app.talent.talentHome', []);
 
 })();
