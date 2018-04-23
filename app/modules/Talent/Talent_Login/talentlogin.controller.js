@@ -114,8 +114,8 @@
         };
 
         $timeout(function() {
-            $scope.username = "parth_shah9478@yahoo.com";
-            $scope.password = "abc1234";
+            $scope.login.username = "parth_shah9478@yahoo.com";
+            $scope.login.password = "abc1234";
         })
 
         //  }
