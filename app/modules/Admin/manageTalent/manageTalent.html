@@ -18,6 +18,7 @@
                                   
                                   <li class="tabs nav-link " ng-class="{active:selectedTab == 2}" role="presentation"><a ng-click="selectTab(2)" aria-controls="2" role="tab" data-toggle="tab">Pitch Request</a></li>
                                   <li class="tabs nav-link " ng-class="{active:selectedTab == 3}" role="presentation"><a ng-click="selectTab(3)" aria-controls="3" role="tab" data-toggle="tab">Talent List</a></li>
+                                  <li class="tabs nav-link " ng-class="{active:selectedTab == 4}" role="presentation"><a ng-click="selectTab(4)" aria-controls="4" role="tab" data-toggle="tab">Create Group</a></li>
                                 </ul>
                                 
                                   <!-- Tab panes -->
@@ -37,21 +38,21 @@
                                               <tr>
                                                 <th scope="row">1</th>
                                                 <td>Mark</td>
-                                                <td><a href="mailto:">@mdo</a></td>
-                                                <td><a ng-click="getProjectDetails('key')">Otto</a></td>
+                                                <td><a href="mailto:">mark@mdo.on.ca</a></td>
+                                                <td><a ng-click="getProjectDetails('key')">LinkedIn Map</a></td>
                                                 <td><button ng-click="">Accept</button> <button ng-click="">Reject</button></td>
                                               </tr>
                                               <tr>
                                                 <th scope="row">2</th>
                                                 <td>Jacob</td>
-                                                <td><a href="mailto:">@mdo</a></td>
+                                                <td><a href="mailto:">Jacob@gmail.com</a></td>
                                                 <td><a ng-click="getProjectDetails('key')">Talent Map</a></td>
                                                 <td><button ng-click="">Accept</button> <button ng-click="">Reject</button></td>
                                               </tr>
                                               <tr>
                                                 <th scope="row">3</th>
                                                 <td>Larry</td>
-                                                <td><a href="mailto:">@mdo</a></td>
+                                                <td><a href="mailto:">Larry@outlook.com</a></td>
                                                 <td><a ng-click="getProjectDetails('key')">Otto</a></td>
                                                 <td><button ng-click="">Accept</button> <button ng-click="">Reject</button></td>
                                               </tr>
@@ -65,39 +66,73 @@
                                             <thead>
                                               <tr>
                                                 <th scope="col">Group. No</th>
-                                                <th scope="col">First Name</th>
-                                                <th scope="col">Last Name</th>
-                                                <th scope="col">Email</th>
+                                                <th scope="col">Group Name</th>
+                                                <th scope="col">Member Names</th>
+                                                <th scope="col">Group Email</th>
                                                 <th scope="col">Assigned Project</th>
                                               </tr>
                                             </thead>
                                             <tbody>
                                               <tr>
                                                 <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>@mdo</td>
+                                                <td>Code Shore</td>
+                                                <td>Parth Shah , Parthik Modi , Savan Trada</td>
+                                                <td><a>PPS123@gmail.com</a></td>
+                                                <td>TalentMap</td>
                                               </tr>
                                               <tr>
                                                 <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                                <td>@mdo</td>
+                                                <td>Code villa</td>
+                                                <td>Jacob Thornton,Mark Henry</td>
+                                                <td><a>JM1001@outlook.com</a></td>
+                                                <td>Stock exchange</td>
                                               </tr>
                                               <tr>
                                                 <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>Larry</td>
-                                                <td>@twitter</td>
-                                                <td>@mdo</td>
+                                                <td>Foody</td>
+                                                <td>Larry,Paul</td>
+                                                <td><a>LP898@outlook.com</a></td>
+                                                <td>Online food Service</td>
                                               </tr>
                                             </tbody>
                                           </table>
         
                                     </div>
-                                   
+                                    <div role="tabpanel" ng-show="selectedTab == 4">
+                                        <form class="form-horizontal" ng-click="">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" for="GroupName">Group Name</label>
+                                                <div class="col-sm-10">
+                                                  <input type="Text" class="form-control" id="GroupName" placeholder="Enter Group Name">
+                                                </div>
+                                             </div>
+                                          
+                                              
+                                            <div class="form-group">
+                                              <label class="control-label col-sm-2" for="email">Email:</label>
+                                              <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                              <label class="control-label col-sm-2" for="pwd">Password:</label>
+                                              <div class="col-sm-10"> 
+                                                <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" for="cnfpwd">Confirm Password:</label>
+                                                <div class="col-sm-10"> 
+                                                  <input type="password" class="form-control" id="cnfpwd" placeholder="Confirm password">
+                                                </div>
+                                              </div>
+                                            <div class="form-group"> 
+                                              <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-default">Submit</button>
+                                              </div>
+                                            </div>
+                                          </form>
+                                    </div>    
                                   </div>
                                 
                                 </div>

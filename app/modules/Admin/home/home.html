@@ -18,25 +18,27 @@
                                 </nav> -->
                                 <ul class="nav nav-tabs mb-3" role="tablist">
                                   <li class="tabs nav-link " ng-class="{active:selectedTab == 1}"  role="presentation"><a ng-click="selectTab(1)" aria-controls="1" role="tab" data-toggle="tab">Client &nbsp;<span> (5)</span></a></li>
-                                  <li class="tabs nav-link " ng-class="{active:selectedTab == 2}" role="presentation"><a ng-click="selectTab(2)" aria-controls="2" role="tab" data-toggle="tab">Talent &nbsp;<span> (10)</span></a></li>
-                                  <li class="tabs nav-link " ng-class="{active:selectedTab == 3}" role="presentation"><a ng-click="selectTab(3)" aria-controls="3" role="tab" data-toggle="tab">Sponser &nbsp;<span> (2)</span></a></li>
+                                  <li class="tabs nav-link " ng-class="{active:selectedTab == 2}" role="presentation"><a ng-click="selectTab(2)" aria-controls="2" role="tab" data-toggle="tab">Talent &nbsp;<span> (6)</span></a></li>
+                                  <li class="tabs nav-link " ng-class="{active:selectedTab == 3}" role="presentation"><a ng-click="selectTab(3)" aria-controls="3" role="tab" data-toggle="tab">Sponser &nbsp;<span> (3)</span></a></li>
                                 </ul>
                                 
                                   <!-- Tab panes -->
                                   <div class="tab-content">
                                     <div class = "mainArea" role="tabpanel" ng-show="selectedTab == 1">
-                                       <div class="content"> You Have new <span> 5 </span> Client registration Request.</div>
+                                       <div class="content"> You Have <span> 2 </span> Client registration Request.
+                                       <br> <br>You Have <span> 3 </span> proposal for new project.</div>
+                                      </div>
                                     </div>
                                     <div class = "mainArea" role="tabpanel"  ng-show="selectedTab == 2">
                                           <div class="content"> 
-                                            New talent group created :<span> 5 </span> 
+                                            New talent group created :<span> 3 </span> 
                                             <br><br>
-                                            New pitch request from talent : <span>5</span>
+                                            New pitch request from talent : <span>3</span>
                                             </div>
                                     </div>
                                     
                                     <div class = "mainArea" role="tabpanel" ng-show="selectedTab == 3">
-                                        <div class="content">There are <span> 2 </span> new sponsers request.</div>
+                                        <div class="content">There are <span> 3 </span> new sponsers request.</div>
                                     </div>
                                    
                                   </div>
