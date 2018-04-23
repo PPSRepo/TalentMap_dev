@@ -110,8 +110,8 @@ public function getClientProjectList ($data){
     `cpi`.`project_status` as 'project_status_id',
     `ps`.`status` as 'project_status',
     `cpi`.`sponsor_id`,
-    `s`.`organization_name` as 'sponsor_name'
-FROM `talentmapdev`.`client_project_idea` as `cpi`, `sponsor` as `s`, `project_status` as `ps` where `s`.`id` = `cpi`.`sponsor_id` and `cpi`.`project_status`=`ps`.`id` and `cpi`.`client_id` = ?;
+    (select `s`.`organization_name`  from `sponsor` as `s` where `s`.id = `cpi`.`sponsor_id`) as 'sponsor_name'
+FROM `talentmapdev`.`client_project_idea` as `cpi` ,  `project_status` as `ps` where  `cpi`.`project_status`=`ps`.`id` and `cpi`.`client_id` = ?;
 ";
     $stmt = $conn->prepare($sql);
     
@@ -122,7 +122,6 @@ FROM `talentmapdev`.`client_project_idea` as `cpi`, `sponsor` as `s`, `project_s
     while($row = $res->fetch_assoc()){
         array_push( $records,$row);
     }
-    
     $stmt->close();
     $resData["records"] = $records;
     
@@ -132,7 +131,7 @@ FROM `talentmapdev`.`client_project_idea` as `cpi`, `sponsor` as `s`, `project_s
     return $responseData;
 }
 
-public function addClientProject(){
+public function addClientProject($data){
     $responseData = phpConfig::$config["responseDataFormat"];
     $resData = array();
     
@@ -168,25 +167,24 @@ public function addClientProject(){
     coop_opportunity_details,
     year_submitted,
     month,
-    day ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';  //28 columns
+    day ) values (  ?,?,?,?,?,
+                    ?,?,?,?,?,
+                    ?,?,?,?,?,
+                    ?,?,?,?,?,
+                    ?,?,?,?,?,
+                    ?,?,?)';  //28 columns
         
  $stmt = $conn->prepare($sql);
- $stmt->bind_param("issss
-                    iissi
-                    sssis
-                    ssssi
-                    sssss
-                    sss",
-                    $param["user_id"]);
-    $stmt->execute();
-    $res = $stmt->get_result();
-    $records = array();
-    while($row = $res->fetch_assoc()){
-        array_push( $records,$row);
+
+ $stmt->bind_param("issssiississsisssssisisisiii",$data["client_id"],$data["project_sponsor_name"],$data["title"],$data["email"],$data["telephone_direct"],     $data["available_few_hours"],$data["feedback_given"],$data["project_title"],$data["project_description"],$data["attachments_provided"],     $data["problems_opportunity"],$data["research_required"],$data["analysis_required"],$data["estimated_effort_hours"],$data["report_format"],     $data["other_deliverables"],$data["skill_needed_1"],$data["skill_needed_2"],$data["skill_needed_3"],$data["required_training"],     $data["training_details"],$data["international_component"],$data["international_component_details"],$data["coop_opportunity"],$data["coop_opportunity_details"],     $data["year_submitted"], $data["month"],$data["day"]);
+    if($stmt->execute()){
+        $resData["insert_status"] = 1;
+    }else{
+        $resData["insert_status"] = 0;
     }
-    
+
     $stmt->close();
-    $resData["records"] = $records;
+    
     
     //last line
     $responseData["data"] = $resData;

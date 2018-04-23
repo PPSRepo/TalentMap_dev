@@ -51,7 +51,7 @@ class phpConfig{
                      " Regards, <br> &copy; TalentMap Team"
         ),
         "registrationRequestTalentMailTemplate" => array(
-            "subject" => "TalentMap Registration Request",
+            "subject" => "TalentMap Registration",
              "body"  => "Hello, <br>".
                       " You have successfully registered yourselt into the system. <br>".
                       " Please login into system using your Email ID as username and password.<br>".

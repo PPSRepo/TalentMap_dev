@@ -5,6 +5,7 @@ require_once '../controller/userController.php';
 require_once '../controller/registrationController.php';
 require_once '../controller/loginController.php';
 require_once '../controller/clientController.php';
+require_once '../controller/adminController.php';
 
 //getting response format
 $response = phpConfig::$config["responseFormat"];
@@ -48,6 +49,7 @@ if(isset($request["talentMap"])){
             $responseData = (new loginController)->loginUser($request["data"]);
             break;
         }
+        //client related routing
         case 'getClientProfileDetails' : {
             
             if(checkToken($request["data"])){
@@ -75,6 +77,43 @@ if(isset($request["talentMap"])){
             }else{
                 $responseData = phpConfig::$config["invalidTokenReponse"];
             }
+            
+            break;
+        }
+        case 'addClientProject' : {
+            
+            if(checkToken($request["data"])){
+                $responseData =  (new clientController)->addClientProject($request["data"]);
+            }else{
+                $responseData = phpConfig::$config["invalidTokenReponse"];
+            }
+            
+            break;
+        }
+        
+        //admin related routing
+        case 'getAdminDashboardCounterData' : {
+            
+            $responseData =  (new adminController)->getAdminDashboardCounterData($request["data"]);
+                     
+            break;
+        }
+        case 'getClientProjectListForAdmin' : {
+            
+            $responseData =  (new adminController)->getClientProjectList($request["data"]);
+            
+            break;
+        }
+        case 'getClientListForAdmin' : {
+            
+            $responseData =  (new adminController)->getClientList($request["data"]);
+            
+            break;
+        }
+        
+        case 'updateClientProjectDetailsByAdmin' : {
+            
+            $responseData =  (new adminController)->updateClientProjectDetails($request["data"]);
             
             break;
         }
