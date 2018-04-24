@@ -3,6 +3,7 @@
     <client-menu></client-menu>
     <div class="containerWrapper">
         <div class="container">
+            <div class="wrapper" ng-show="tableShow">
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -14,15 +15,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">Project 1</th>
-                        <td>Demo Description</td>
-                        <td>Posted</td>
-                        <td>-</td>
-                        <td><button ng-click="viewProjectDetails(project)">Details</td>
+                    <tr ng-repeat="project in projects">
+                        <th scope="row">{{project.project_title}}</th>
+                        <td>{{project.project_description}}</td>
+                        <td>{{project.project_status}}</td>
+                        <td>{{project.sponsor_name}}</td>
+                        <td><button class="btn btn-primary" ng-click="showDetails(project)">Details</button>
+                        
+                        </td>
                     </tr>
                 </tbody>
              </table>
+            </div>
+
+            <div class="wrapper" ng-hide="tableShow">
+                <button ng-click="showDetails({})">Go back</button>
+            </div>
+
+            
+
+
         </div> 
     </div>
 </div>
