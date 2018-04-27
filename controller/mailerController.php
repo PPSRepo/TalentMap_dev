@@ -37,7 +37,7 @@ class mailerController
         );
         $mail->IsHTML(true);
         $mail->SMTPAutoTLS = false;
-        $mail->Host = 'tls://smtp.gmail.com:587';
+        $mail->Host = gethostbyname('smtp.gmail.com');
         $mail->Username = "talentmap.csolutions@gmail.com";
         $mail->Password = "CapSt0ne2018#";
         

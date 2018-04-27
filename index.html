@@ -9,15 +9,15 @@
     <!-- to fix hashbang (#!) in url which is added because of ajax calls -->
     <!--<base href="/"> -->
 
-<!-- Bootstrap CDN  -->
-<!-- Latest compiled and minified CSS -->
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CDN  -->
+    <!-- Latest compiled and minified CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
 
 
     <!-- CSS import -->
@@ -39,35 +39,34 @@
 
 </head>
 
-<body >
+<body>
 
     <header class="bg-dark text-white">
         <div class="logoheading">
-           <img src="images/logo.png" class="visible-xs visible-sm circle-logo">
+            <img src="images/logo.png" class="visible-xs visible-sm circle-logo">
         </div>
-      <!-- /* <div class="text-center py-2 lead"><h1>TalentMap</h1> </div>*/-->
-                
-    </header>
-        
-<main class="container" >
-        <ng-view></ng-view>
-</main>
+        <!-- /* <div class="text-center py-2 lead"><h1>TalentMap</h1> </div>*/-->
 
-    
-<footer class="footer-bs position-relative">
-    <div class="row">
-        <div class="animated fadeInLeft">
-            <h2>Codeshore</h2>
-            <p>© 2018 All rights reserved</p>
+    </header>
+
+    <main class="container">
+        <ng-view></ng-view>
+    </main>
+
+
+    <footer class="footer-bs position-relative">
+        <div class="row">
+            <div class="animated fadeInLeft">
+                <h2>Codeshore</h2>
+                <p>© 2018 All rights reserved</p>
+            </div>
+
         </div>
-       
-    </div>
-</footer>
+    </footer>
 
 
     <!-- Angular library and  controller , module, config, route js linking -->
     <script src="js/jquery-3.2.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
     <script src="js/angular/angular.js"></script>
     <script src="js/angular/angular-route.js"></script>
     <script src="js/angular/angular-animate.js"></script>
@@ -84,7 +83,7 @@
     <script src="app/modules/home/home.controller.js"></script>
 
 
-<!-- Client Files -->
+    <!-- Client Files -->
     <script src="app/modules/client/login/login.module.js"></script>
     <script src="app/modules/client/login/login.controller.js"></script>
 
@@ -100,41 +99,41 @@
     <script src="app/modules/client/client_viewproject/clientviewproject.module.js"></script>
     <script src="app/modules/client/client_viewproject/clientviewproject.controller.js"></script>
 
-    
-    
-<!-- Admin Files -->
-<script src="app/modules/Admin/login/adminLogin.module.js"></script>
-<script src="app/modules/Admin/login/adminLogin.controller.js"></script>
-
-<script src="app/modules/Admin/home/adminHome.module.js"></script>
-<script src="app/modules/Admin/home/adminHome.controller.js"></script>
-
-<script src="app/modules/Admin/manageClient/manageClient.module.js"></script>
-<script src="app/modules/Admin/manageClient/manageClient.controller.js"></script>
 
 
-<script src="app/modules/Admin/manageTalent/manageTalent.module.js"></script>
-<script src="app/modules/Admin/manageTalent/manageTalent.controller.js"></script>
+    <!-- Admin Files -->
+    <script src="app/modules/Admin/login/adminLogin.module.js"></script>
+    <script src="app/modules/Admin/login/adminLogin.controller.js"></script>
+
+    <script src="app/modules/Admin/home/adminHome.module.js"></script>
+    <script src="app/modules/Admin/home/adminHome.controller.js"></script>
+
+    <script src="app/modules/Admin/manageClient/manageClient.module.js"></script>
+    <script src="app/modules/Admin/manageClient/manageClient.controller.js"></script>
 
 
-<script src="app/modules/Admin/manageSponser/manageSponser.module.js"></script>
-<script src="app/modules/Admin/manageSponser/manageSponser.controller.js"></script>
-
-<script src="app/modules/Talent/Talent_Login/talentlogin.module.js"></script>
-<script src="app/modules/Talent/Talent_Login/talentlogin.controller.js"></script>
-
-<script src="app/modules/Talent/Talent_Dashboard/talenthome.module.js"></script>
-<script src="app/modules/Talent/Talent_Dashboard/talenthome.controller.js"></script>
-
-<script src="app/modules/Talent/talent_managegroup/talentmanagegroup.module.js"></script>
-<script src="app/modules/Talent/talent_managegroup/talentmanagegroup.controller.js"></script>
-
-<script src="app/modules/Talent/talent_manageprofile/talentmanageprofile.module.js"></script>
-<script src="app/modules/Talent/talent_manageprofile/talentmanageprofile.controller.js"></script>
+    <script src="app/modules/Admin/manageTalent/manageTalent.module.js"></script>
+    <script src="app/modules/Admin/manageTalent/manageTalent.controller.js"></script>
 
 
-<script src="app/modules/Talent/talent_viewprojects/talentviewprojects.module.js"></script>
-<script src="app/modules/Talent/talent_viewprojects/talentviewprojects.controller.js"></script>
+    <script src="app/modules/Admin/manageSponser/manageSponser.module.js"></script>
+    <script src="app/modules/Admin/manageSponser/manageSponser.controller.js"></script>
+
+    <script src="app/modules/Talent/Talent_Login/talentlogin.module.js"></script>
+    <script src="app/modules/Talent/Talent_Login/talentlogin.controller.js"></script>
+
+    <script src="app/modules/Talent/Talent_Dashboard/talenthome.module.js"></script>
+    <script src="app/modules/Talent/Talent_Dashboard/talenthome.controller.js"></script>
+
+    <script src="app/modules/Talent/talent_managegroup/talentmanagegroup.module.js"></script>
+    <script src="app/modules/Talent/talent_managegroup/talentmanagegroup.controller.js"></script>
+
+    <script src="app/modules/Talent/talent_manageprofile/talentmanageprofile.module.js"></script>
+    <script src="app/modules/Talent/talent_manageprofile/talentmanageprofile.controller.js"></script>
+
+
+    <script src="app/modules/Talent/talent_viewprojects/talentviewprojects.module.js"></script>
+    <script src="app/modules/Talent/talent_viewprojects/talentviewprojects.controller.js"></script>
 
 
 

@@ -103,7 +103,7 @@ class registrationController
              rr.id as request_id,
              rr.requested_date,
              rr.request_fulfilled
-             FROM user_details as ud, registration_request as rr where ud.id = rr.requester_id";
+             FROM user_details as ud, registration_request as rr where ud.id = rr.requester_id and rr.request_fulfilled = 0";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $res = $stmt->get_result();

@@ -62,7 +62,7 @@ DECLARE exit handler for sqlexception
 END;
 
 set @user_id  = user_id;
-set @requester = requester_id;
+set @requester_id = requester_id;
 set @user_password =  user_password;
 
 /* MUST HAVE THIS start transction before making any query */

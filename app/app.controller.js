@@ -298,7 +298,7 @@ var usr = "";
         $scope.$watch(User.isLoggedIn, function(value, oldValue) {
             if (!value) {
                 console.log("User Is Not Logged In, Redirecting to Login Page");
-                if ($location.path() !== "/" || $location.path() !== "") {
+                if ($location.path() != "/" && $location.path() != "") {
                     alert("You are not logged in - Redirecting to HOME PAGE");
                     $scope.goToPage("/");
                 }

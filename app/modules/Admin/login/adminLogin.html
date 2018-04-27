@@ -1,21 +1,17 @@
-<form ng-submit="getAdminHome()" class = "adminLoginForm">
+<form ng-submit="getAdminHome()" class="adminLoginForm">
     <h2>Admin Sign In</h2>
     <br>
-    <div class="form-group col-xs-8" >
-        <label for = "userName" >Username or Email Address </label>
-        <input type = "text" class="form-control input-lg" name="userName">
+    <div class="form-group col-xs-8">
+        <label for="userName">Username or Email Address </label>
+        <input type="text" class="form-control input-lg" ng-model="login.username">
     </div>
     <div class="form-group col-xs-8">
-        <label for = "password">Password </label>
-        <input type = "password" name="password" class="form-control input-lg">
+        <label for="password">Password </label>
+        <input type="password" ng-model="login.password" class="form-control input-lg">
     </div>
-    <div class="form-group col-xs-8"> 
-        <input type = "submit" name="submit" ng-click="getAdminHome()" class="btn" value="Sign in">
-        <input type = "submit" name="back" value="Back" class="btn">
+    <div class="form-group col-xs-8">
+        <input type="submit" name="submit" ng-click="getAdminHome()" class="btn" value="Sign in">
+        <input type="submit" ng-click="goToPage('/')" value="Back" class="btn">
     </div>
-    <div class="form-group col-xs-10"></div>
-    <div class="form-group col-xs-4">
-        <a href="">forgot username?</a><br>
-        <a href="">forgot password?</a>
-    </div>
+
 </form>

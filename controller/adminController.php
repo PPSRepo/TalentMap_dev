@@ -29,7 +29,31 @@ class adminController
             array_push( $records,$row);
         }
         $stmt->close();
-        $resData["records"] = $records;
+        $resData["counter"] = $records;
+
+        $sql = "SELECT * from project_status";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $records = array();
+        while($row = $res->fetch_assoc()){
+            array_push( $records,$row);
+        }
+        $stmt->close();
+        $resData["project_status"] = $records;
+
+        $sql = "SELECT * from sponsor";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $records = array();
+        while($row = $res->fetch_assoc()){
+            array_push( $records,$row);
+        }
+        $stmt->close();
+        $resData["sponsor"] = $records;
+
+
         //last line
         $responseData["data"] = $resData;
         return $responseData;
@@ -43,6 +67,7 @@ class adminController
         $conn = dbCon::getDbCon();
         $sql = "SELECT `cpi`.`id` as 'project_id',
     `ud`.`email` as `proposor_email`,
+    `ud`.`first_name` as `company_name`,
     `cpi`.`client_id`,
     `cpi`.`project_sponsor_name`,
     `cpi`.`title`,

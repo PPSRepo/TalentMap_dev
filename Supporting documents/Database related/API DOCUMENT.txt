@@ -394,10 +394,60 @@ response object
     "error": "",
     "responseData": {
         "data": {
-            "records": [
+            "counter": [
                 {
-                    "proposed_project_count": 2,
-                    "client_registration_count": 3
+                    "proposed_project_count": 1,
+                    "client_registration_count": 1
+                }
+            ],
+            "project_status": [
+                {
+                    "id": 1,
+                    "status": "proposed"
+                },
+                {
+                    "id": 2,
+                    "status": "evaluation"
+                },
+                {
+                    "id": 3,
+                    "status": "approved"
+                },
+                {
+                    "id": 4,
+                    "status": "rejected"
+                },
+                {
+                    "id": 5,
+                    "status": "on-hold"
+                },
+                {
+                    "id": 6,
+                    "status": "not-assigned"
+                },
+                {
+                    "id": 7,
+                    "status": "assigned"
+                },
+                {
+                    "id": 8,
+                    "status": "complete"
+                },
+                {
+                    "id": 9,
+                    "status": "incomplete"
+                }
+            ],
+            "sponsor": [
+                {
+                    "id": 1,
+                    "organization_name": "Conestoga College",
+                    "address": "Doon valley"
+                },
+                {
+                    "id": 2,
+                    "organization_name": "Humber",
+                    "address": "Toronto"
                 }
             ]
         },
@@ -428,6 +478,7 @@ Response object
                 {
                     "project_id": 1,
                     "proposor_email": "parth_shah9478@yahoo.com",
+                    "company_name" : "",
                     "client_id": 16,
                     "project_sponsor_name": "Parth project",
                     "title": "Talent map",
@@ -464,6 +515,7 @@ Response object
                 {
                     "project_id": 10,
                     "proposor_email": "parth_shah9478@yahoo.com",
+                    "company_name" : "",
                     "client_id": 16,
                     "project_sponsor_name": "Parth projectf test",
                     "title": "Talent map4",
